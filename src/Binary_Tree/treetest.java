@@ -36,6 +36,9 @@ class treetest {
      *    / \
      *   g   h
      * sum = 48
+     *
+     * a-e 28
+     * b-h 12
      */
 
     @Test
@@ -131,4 +134,17 @@ class treetest {
         Assertions.assertEquals(expected, actual);
     }
 
+
+    @Test
+    void maxRootSum_Root_Success() throws Exception {
+        final int expected = 28;
+        final int actual = tree.maxRootSum();
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
+    void maxRootSum_b_Success() throws Exception {
+        final int expected = 12;
+        final int actual = (int) tree.maxRootSum(b);
+        Assertions.assertEquals(expected, actual);
+    }
 }

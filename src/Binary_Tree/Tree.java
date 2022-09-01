@@ -4,6 +4,7 @@ import java.util.LinkedList;
 
 public class Tree {
     private final Node root;
+    private final double INFINITY = Double.POSITIVE_INFINITY;
 
     Tree(Node root) {
         this.root = root;
@@ -76,4 +77,13 @@ public class Tree {
         return max;
     }
 
+    public int maxRootSum() throws Exception {
+        return (int) maxRootSum(this.root);
+    }
+    public double maxRootSum(Node root) throws Exception {
+        if(root == null) return -INFINITY;
+        if(root.left == null && root.right == null) return root.value;
+        final double maxChildPath = Math.max(maxRootSum(root.right), maxRootSum(root.left));
+        return maxChildPath + root.value;
+    }
 }
