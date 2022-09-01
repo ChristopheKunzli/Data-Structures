@@ -31,7 +31,6 @@ public class Tree {
     public int min() {
         return min(this.root);
     }
-
     public int min(Node root) {
         LinkedList <Node> queue = new LinkedList<Node>();
         queue.add(root);
@@ -52,10 +51,10 @@ public class Tree {
         }
         return min;
     }
+
     public int max() {
         return max(this.root);
     }
-
     public int max(Node root) {
         LinkedList <Node> stack = new LinkedList<Node>();
         stack.add(root);
@@ -77,10 +76,10 @@ public class Tree {
         return max;
     }
 
-    public int maxRootSum() throws Exception {
+    public int maxRootSum() {
         return (int) maxRootSum(this.root);
     }
-    public double maxRootSum(Node root) throws Exception {
+    public double maxRootSum(Node root) {
         if(root == null) return -INFINITY;
         if(root.left == null && root.right == null) return root.value;
         final double maxChildPath = Math.max(maxRootSum(root.right), maxRootSum(root.left));
