@@ -42,6 +42,15 @@ public class List {
         return tail;
     }
 
+    public void printList() {
+        Node current = this.head;
+        while (current != null) {
+            System.out.print(current.getValue() + " ");
+            current = current.getNext();
+        }
+        System.out.println();
+    }
+
     public void append(Node node) {
         if (this.head == null) {
             this.head = this.tail = node;
