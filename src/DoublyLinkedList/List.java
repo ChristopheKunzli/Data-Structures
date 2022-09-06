@@ -43,7 +43,14 @@ public class List {
     }
 
     public void append(Node node) {
+        if (this.head == null) {
+            this.head = this.tail = node;
+            return;
+        }
 
+        this.tail.setNext(node);
+        node.setPrevious(this.tail);
+        this.tail = node;
     }
 
 }
