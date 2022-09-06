@@ -62,4 +62,13 @@ public class List {
         this.tail = node;
     }
 
+    public boolean contains(int target) {
+        Node current = this.tail;
+
+        while (current != this.head) {
+            if (current.getValue() == target) return true;
+            current = current.getPrevious();
+        }
+        return false;
+    }
 }
